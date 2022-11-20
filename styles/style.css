@@ -31,3 +31,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+ul.num {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+ul.tabs {
+  margin: 1cm;
+}
