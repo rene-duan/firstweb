@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>收集表单数据</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <form @submit.prevent="demo2">
+        <label for="demo">Account:</label>
+        <input type="text" id="demo" v-model="account"><br/><br/>
+        <label for="demo1">Password:</label>
+        <input type="text" id="demo1" v-model="password"><br/><br/>
+        male<input type="radio" v-model="sex" value="male">female<input type="radio" v-model="sex" value="female"><br/><br/>
+        hobby:
+        learning<input type="checkbox" v-model="hobby" value="learning">
+        gaming<input type="checkbox"    v-model="hobby"   value="gaming">
+        eating<input type="checkbox" v-model="hobby" value="eating"><br/><br/>
+        campuse location:<select v-model="city">
+          <option value="">please choose</option>
+          <option value="beijing">beijing</option>
+          <option value="shanghai">shanghai</option>
+          <option value="sz">shenzhen</option>
+          <option value="wh">wuhan</option>
+        </select>
+        <br/><br/>
+        other information:
+        <textarea v-model="other">
+
+        </textarea><br/>
+        <input type="checkbox" v-model="agree">read and accept<a href="https://www.google.com">lisece</a>
+        <button>submit</button>
+      </form>
+    </div>
+  </body>
+    <script type="text/javascript">
+      Vue.config.productionTip = false
+      new Vue({
+         el:'#root',
+        data:{
+          account:'',
+          password:'',
+          sex:'',
+          hobby:[],
+          city:'',
+          other:'',
+          agree:''
+        },
+        methods:{
+          demo2(){
+            console.log(this._data)
+          }
+
+        }
+      })
+       
+
+    </script>
+</html>
